@@ -10,11 +10,11 @@ int main(void) {
     printf("Enter the parameters for the function (if any):\n");
     scanf("%f %f %f %f %f %f %f %f %f %f", &var1, &var2, &var3, &var4, &var5, &var6, &var7, &var8, &var9, &var10);
     if (num == 1) {
-        PM_ClipVelocity((vec3_t){1.0, 2.0, 3.0}, (vec3_t){0.0, 1.0, 0.0}, (vec3_t){0.0, 0.0, 0.0}, 1.0);
+        PM_ClipVelocity((vec3_t){var1, var2, var3}, (vec3_t){var4, var5, var6}, (vec3_t){var7, var8, var9}, var10);
     } else if (num == 2) {
-        PM_Accelerate((vec3_t){1.0, 0.0, 0.0}, 5.0, 10.0);
+        PM_Accelerate((vec3_t){var1, var2, var3}, var4, var5);
     } else if (num == 3) {
-        PM_AirAccelerate((vec3_t){1.0, 1.0, 0.0}, 5.0, 10.0);
+        PM_AirAccelerate((vec3_t){var1, var2, var3}, var4, var5);
     } else if (num == 4) {
         PM_FlyMove();
     } else if (num == 5) {
@@ -22,7 +22,13 @@ int main(void) {
     } else if (num == 6) {
         PM_CatagorizePosition();
     } else if (num == 7) {
-        PM_PlayerMove((vec3_t){0.0, 0.0, 0.0}, (vec3_t){1.0, 1.0, 1.0});
+        PM_PlayerMove((vec3_t){var1, var2, var3}, (vec3_t){var4, var5, var6});
+    } else if (num == 8) {
+        PM_WaterMove();
+    } else if (num == 9) {
+        PM_AirMove();
+    } else if (num == 10) {
+        PM_Friction();
     } else {
         printf("Invalid number entered.\n");
     }
